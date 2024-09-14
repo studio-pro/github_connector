@@ -1,10 +1,10 @@
 /**
- * Filters out even numbers from an array.
- * This function showcases array filtering in TypeScript.
+ * Calculates the sum of an array of numbers.
+ * This example highlights reduction operation in TypeScript.
  *
- * @param numbers - An array of numbers to filter.
- * @returns An array of odd numbers.
+ * @param numbers - An array of numbers to sum.
+ * @returns The total sum of the numbers.
  */
-function filterEvenNumbers(numbers: number[]): number[] {
-  return numbers.filter(num => num % 2 !== 0);
+function sumArray(numbers: number[]): number {
+  return numbers.reduce((acc, curr) => acc + curr, 0);
 }
