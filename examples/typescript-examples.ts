@@ -1,10 +1,10 @@
 /**
- * Calculates the sum of an array of numbers.
- * This example highlights reduction operation in TypeScript.
+ * Capitalizes the first letter of each word in a sentence.
+ * This function demonstrates string manipulation techniques in TypeScript.
  *
- * @param numbers - An array of numbers to sum.
- * @returns The total sum of the numbers.
+ * @param sentence - The input sentence to capitalize.
+ * @returns A new sentence with each word capitalized.
  */
-function sumArray(numbers: number[]): number {
-  return numbers.reduce((acc, curr) => acc + curr, 0);
+function capitalizeWords(sentence: string): string {
+  return sentence.split(' ').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ');
 }
