@@ -10,10 +10,6 @@ interface User {
   email?: string;
 }
 
-const user: User = { id: 1, name: 'John Doe', email: 'john.doe@example.com' };
-const serializedUser = typia.stringify<User>(user);
-console.log(serializedUser); // Expected serialized output
-
 /**
  * Parses a serialized user JSON back to User object.
  * This function demonstrates deserialization using Typia.
@@ -23,9 +19,5 @@ console.log(serializedUser); // Expected serialized output
  * @throws Will throw an error if parsing fails.
  */
 function parseUser(json: string): User {
-  const obj: User = typia.parse<User>(json);
-  return obj;
+  return typia.parse<User>(json);
 }
-
-const parsedUser = parseUser(serializedUser);
-console.log(parsedUser); // Log deserialized User object
