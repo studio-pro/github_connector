@@ -1,11 +1,10 @@
 /**
- * Generates a random integer between two values.
- * This demonstrates random number generation in TypeScript.
+ * Filters out even numbers from an array.
+ * This function showcases array filtering in TypeScript.
  *
- * @param min - The minimum integer value.
- * @param max - The maximum integer value.
- * @returns A random integer between min and max.
+ * @param numbers - An array of numbers to filter.
+ * @returns An array of odd numbers.
  */
-function getRandomInt(min: number, max: number): number {
-  return Math.floor(Math.random() * (max - min + 1)) + min;
+function filterEvenNumbers(numbers: number[]): number[] {
+  return numbers.filter(num => num % 2 !== 0);
 }
