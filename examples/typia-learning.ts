@@ -1,16 +1,27 @@
 /**
- * Advanced serialization with Typia including optional properties.
- * This example demonstrates how to handle optional properties in serialization.
+ * Serialization of nested objects with Typia.
+ * This example demonstrates how to serialize and deserialize nested objects.
  */
-interface AdvancedExample {
+interface NestedExample {
   id: number;
   name: string;
-  description?: string;
+  details: {
+    age: number;
+    address: string;
+  };
 }
 
-const advancedExample: AdvancedExample = { id: 2, name: 'Advanced Typia Example' };
-const serializedAdvanced = typia.stringify<AdvancedExample>(advancedExample);
-console.log('Serialized Advanced Example:', serializedAdvanced);
+const nestedExample: NestedExample = {
+  id: 3,
+  name: 'Nested Typia Example',
+  details: {
+    age: 30,
+    address: '123 Typia Lane',
+  },
+};
 
-const deserializedAdvanced = typia.parse<AdvancedExample>(serializedAdvanced);
-console.log('Deserialized Advanced Example:', deserializedAdvanced);
+const serializedNested = typia.stringify<NestedExample>(nestedExample);
+console.log('Serialized Nested Example:', serializedNested);
+
+const deserializedNested = typia.parse<NestedExample>(serializedNested);
+console.log('Deserialized Nested Example:', deserializedNested);
