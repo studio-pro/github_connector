@@ -1,4 +1,10 @@
 /**
+ * Demonstrates use of Typia library with a sample interface.
+ * This example highlights serialization using Typia.
+ */
+import typia from 'typia';
+
+/**
  * Greets the user with a message.
  * This function is intended to demonstrate TypeScript function annotations.
  *
@@ -21,12 +27,6 @@ function factorial(n: number): number {
   if (n < 0) throw new Error('Factorial is not defined for negative numbers');
   return n <= 1 ? 1 : n * factorial(n - 1);
 }
-
-/**
- * Demonstrates use of Typia library with a sample interface.
- * This example highlights serialization using Typia.
- */
-import typia from 'typia';
 
 interface User {
   id: number;
