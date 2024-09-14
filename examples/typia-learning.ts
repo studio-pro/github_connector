@@ -1,17 +1,16 @@
 /**
- * Basic serialization and deserialization example using Typia.
- * This example demonstrates how to serialize and deserialize a simple object.
+ * Advanced serialization with Typia including optional properties.
+ * This example demonstrates how to handle optional properties in serialization.
  */
-import typia from 'typia';
-
-interface Example {
+interface AdvancedExample {
   id: number;
   name: string;
+  description?: string;
 }
 
-const example: Example = { id: 1, name: 'Typia Example' };
-const serializedExample = typia.stringify<Example>(example);
-console.log('Serialized Example:', serializedExample);
+const advancedExample: AdvancedExample = { id: 2, name: 'Advanced Typia Example' };
+const serializedAdvanced = typia.stringify<AdvancedExample>(advancedExample);
+console.log('Serialized Advanced Example:', serializedAdvanced);
 
-const deserializedExample = typia.parse<Example>(serializedExample);
-console.log('Deserialized Example:', deserializedExample);
+const deserializedAdvanced = typia.parse<AdvancedExample>(serializedAdvanced);
+console.log('Deserialized Advanced Example:', deserializedAdvanced);
