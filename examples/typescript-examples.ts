@@ -36,3 +36,13 @@ interface User {
 const user: User = { id: 1, name: 'John Doe' };
 const serializedUser = typia.stringify<User>(user);
 console.log(serializedUser); // Expected serialized output
+
+/**
+ * Splits a sentence into words.
+ * 
+ * @param sentence - A string of text to split.
+ * @returns An array of words.
+ */
+function splitSentence(sentence: string): string[] {
+  return sentence.split(' ');
+}
