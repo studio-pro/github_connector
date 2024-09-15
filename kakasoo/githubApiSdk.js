@@ -2,7 +2,7 @@ import axios from 'axios';
 
 // GitHub API 기본 설정
 const GITHUB_API_BASE_URL = 'https://api.github.com';
-const TOKEN = 'YOUR_PERSONAL_ACCESS_TOKEN';  // personal access token을 여기에 삽입
+const TOKEN = 'YOUR_PERSONAL_ACCESS_TOKEN';
 
 // axios 인스턴스 생성
 const api = axios.create({
@@ -19,6 +19,19 @@ async function getUserRepositories(username) {
     return response.data;
   } catch (error) {
     console.error('Error fetching repositories:', error);
+    throw error;
+  }
+}
+
+// 커밋 목록 가져오기
+async function getBranchCommits(username, repo, branch) {
+  try {
+    const response = await api.get(`/repos/${username}/${repo}/commits`, {
+      params: { sha: branch }
+    });
+    return response.data;
+  } catch (error) {
+    console.error('Error fetching branch commits:', error);
     throw error;
   }
 }
