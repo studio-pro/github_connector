@@ -1,0 +1,14 @@
+{
+  "name": "github_connector",
+  "version": "1.0.0",
+  "description": "GitHub API SDK for fetching user repositories and branch commits",
+  "main": "githubApiSdk.js",
+  "dependencies": {
+    "axios": "^0.21.1"
+  },
+  "scripts": {
+    "start": "node githubApiSdk.js"
+  },
+  "author": "studio-pro",
+  "license": "MIT"
+}
