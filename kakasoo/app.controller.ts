@@ -13,7 +13,7 @@ export class AppController {
       });
       return { status: 'success', product };
     } catch (error) {
-      return { status: 'error', message: 'Error creating product' };
+      return { status: 'error', message: error.message };
     }
   }
 }
