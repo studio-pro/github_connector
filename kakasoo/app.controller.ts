@@ -11,9 +11,9 @@ export class AppController {
       const product = await prisma.product.create({
         data: productData,
       });
-      return { status: 'success', product };
+      return { success: true, data: product };
     } catch (error) {
-      return { status: 'error', message: error.message, details: error };
+      return { success: false, error: error.message };
     }
   }
 }
