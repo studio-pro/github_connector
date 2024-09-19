@@ -7,9 +7,13 @@ const prisma = new PrismaClient();
 export class AppController {
   @Post()
   async createProduct(@Body() productData: Omit<Product, 'id'>) {
-    const product = await prisma.product.create({
-      data: productData,
-    });
-    return product;
+    try {
+      const product = await prisma.product.create({
+        data: productData,
+      });
+      return product;
+    } catch (error) {
+      throw new Error('Error creating product');
+    }
   }
 }
