@@ -1,10 +1,15 @@
-import { Controller, Post } from '@nestjs/common';
+import { Controller, Post, Body } from '@nestjs/common';
+import { PrismaClient, Product } from '@prisma/client';
+
+const prisma = new PrismaClient();
 
 @Controller('products')
 export class AppController {
   @Post()
-  createProduct() {
-    // This is a placeholder for creating a product
-    return { message: 'Product created successfully' };
+  async createProduct(@Body() productData: Omit<Product, 'id'>) {
+    const product = await prisma.product.create({
+      data: productData,
+    });
+    return product;
   }
 }
